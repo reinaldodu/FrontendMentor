@@ -5,16 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | Results summary component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      /*Colors primary*/
+      --light-red: hsl(0, 100%, 67%);
+      --orangey-yellow: hsl(39, 100%, 56%);
+      --green-teal: hsl(166, 100%, 37%);
+      --cobalt-blue: hsl(234, 85%, 45%);
+      /*Colors gradients-background*/
+      --light-slate-blue: hsl(252, 100%, 67%);
+      --light-royal-blue: hsl(241, 81%, 54%);
+      /*Colors gradients-circle*/
+      --violet-blue: hsla(256, 72%, 46%, 1);
+      --persian-blue: hsla(241, 72%, 46%, 0);
+      /*Colors neutrals*/
+      --white: hsl(0, 0%, 100%);
+      --pale-blue: hsl(221, 100%, 96%);
+      --light-lavender: hsl(241, 100%, 89%);
+      --dark-gray-blue: hsl(224, 30%, 27%);
+      
+    }
+    body {
+      font-family: 'Hanken Grotesk', sans-serif;
+    }
+
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
 <body>
+  <main>
+
+    <section class="card1">
+      <h3>Your Result</h3>
+      <div class="card1-result">
+        <h1>76</h1>
+        <p>of 100</p>
+      </div>
+      <h2>Great</h2>
+      <p>You scored higher than 65% of the people who have taken these tests.</p>
+    </section>
+
+    <section class="card2">
+      <h2>Summary</h2>
+      <div class="reaction">
+        <img src="./assets/images/icon-reaction.svg" alt="reaction">
+        <p>Reaction</p>
+        <p><span>80</span> / 100</p>
+      </div>
+    </section>
+  </main>
 
   Your Result
   76
