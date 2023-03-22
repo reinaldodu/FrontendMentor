@@ -35,11 +35,11 @@
       --white: hsl(0, 0%, 100%);
       --pale-blue: hsl(221, 100%, 96%);
       --light-lavender: hsl(241, 100%, 89%);
-      --dark-gray-blue: hsl(224, 30%, 27%);
+      --dark-gray-blue: hsla(224, 30%, 27%,0.5);
+      --fondo-boton: hsla(224, 30%, 27%,1);
       
     }
     body {
-      background-color: var(--pale-blue);
       font-family: 'Hanken Grotesk', sans-serif;
       display: flex;
       flex-direction: column;
@@ -51,37 +51,138 @@
     main {
       display: flex;
       justify-content: center;
-      align-items: center;
-      width: 100%;
-      max-width: 1200px;
+      align-items: stretch;
+      background-color: var(--white);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     }
 
     .card1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       background: linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
       border-radius: 10px;
       padding: 2rem;
-      width: 300px;
-      height: 400px;
-      margin-right: -1rem;
-      z-index: 2;
+      width: 300px;      
     }
+    .card1 h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--light-lavender);
+      margin-bottom: 1rem;
+    }
+
+    .card1-result {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 1rem 0 1rem 0;
+      background: linear-gradient(var(--violet-blue), var(--persian-blue));
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+    }
+    .card1-result h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--white);
+    }
+    .card1-result p {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--light-lavender);
+    }
+    .card1 h2 {      
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .card1 p {
+      text-align: center;
+      color: var(--light-lavender);
+    }
+
     .card2 { 
       background-color: var(--white);
       border-radius: 10px;
       padding: 2rem;
       width: 300px;
-      height: 400px;
-      z-index: 1;
+    }
+
+    .card2 h3 {
+      margin-bottom: 1rem;
+    }
+
+    .card2 button {
+      background-color: var(--fondo-boton);
+      border: none;
+      border-radius: 30px;
+      padding: 0.7rem;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 1.3rem;
+      color: var(--white);
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .reaction, .memory, .verbal, .visual {
+      display: flex;
+      padding: 10px;
+      background-color: var(--pale-blue);
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .reaction .title  {
+      margin-left: 10px;
+      color: var(--light-red);
     }
     
+    .memory .title  {
+      margin-left: 10px;
+      color: var(--orangey-yellow);
+    }
 
-    .attribution { font-size: 11px; text-align: center; }
+    .verbal .title  {
+      margin-left: 10px;
+      color: var(--green-teal);
+    }
+
+    .visual .title  {
+      margin-left: 10px;
+      color: var(--cobalt-blue);
+    }
+    
+    .score {
+      margin-left: auto;
+      color: var(--dark-gray-blue);
+    }
+    .score span {
+      color: var(--dark-gray-blue);
+      font-weight: bold;
+      color:black;
+    }
+    @media (max-width: 650px) {
+      main {
+        flex-direction: column;
+      }
+      .card1 {
+        width: 100%;
+      }
+      .card2 {
+        width: 100%;
+      }
+    }
+
+    .attribution { font-size: 11px; text-align: center; margin-top: 20px; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
 <body>
   <main>
-
     <section class="card1">
       <h3>Your Result</h3>
       <div class="card1-result">
@@ -93,34 +194,37 @@
     </section>
 
     <section class="card2">
-      <h2>Summary</h2>
+      <h3>Summary</h3>
       <div class="reaction">
         <img src="./assets/images/icon-reaction.svg" alt="reaction">
-        <p>Reaction</p>
-        <p><span>80</span> / 100</p>
+        <p class="title">Reaction</p>
+        <p class="score"><span>80</span> / 100</p>
       </div>
       <div class="memory">
         <img src="./assets/images/icon-memory.svg" alt="memory">
-        <p>Memory</p>
-        <p><span>92</span> / 100</p>
+        <p class="title">Memory</p>
+        <p class="score"><span>92</span> / 100</p>
       </div>
       <div class="verbal">
         <img src="./assets/images/icon-verbal.svg" alt="verbal">
-        <p>Verbal</p>
-        <p><span>61</span> / 100</p>
+        <p class="title">Verbal</p>
+        <p class="score"><span>61</span> / 100</p>
       </div>
       <div class="visual">
         <img src="./assets/images/icon-visual.svg" alt="visual">
-        <p>Visual</p>
-        <p><span>72</span> / 100</p>
+        <p class="title">Visual</p>
+        <p class="score"><span>72</span> / 100</p>
       </div>
       <button>Continue</button>
     </section>
   </main>
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://reinaldodu.github.io">Reinaldo Duque</a>.
+    </div>
+  </footer>
+  
 </body>
 </html>
